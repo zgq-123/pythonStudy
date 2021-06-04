@@ -68,4 +68,3 @@ print(A.__mro__)
 print('aaaaaaaaaaaaaaaaa')
 print('bbbbbbbbbbbbfffff')
 
-print('eeeeeeeeeeeeeeeee')
