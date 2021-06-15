@@ -33,37 +33,24 @@ from time import sleep
 m = 1
 
 
-# def task1():
-#     global m
-#     while True:
-#         m += 1
-#         sleep(1)
-#         print('这是任务1:' + str(m))
-#
-#
-# def task2():
-#     global m
-#     while True:
-#         m += 1
-#         sleep(2)
-#         print('这是任务2:' + str(m))
-#
-#
-# if __name__ == '__main__':
-#     p1 = Process(target=task1, name='任务1')
-#     p1.start()
-#     p2 = Process(target=task2, name='任务2')
-#     p2.start()
+def task1():
+    global m
+    while True:
+        m += 1
+        sleep(1)
+        print('这是任务1:' + str(m))
 
 
-class Test():
-    m = 2
-
-    def __init__(self):
-        m = 5
-
-    def connect(self):
-        print(m)
+def task2():
+    global m
+    while True:
+        m += 1
+        sleep(2)
+        print('这是任务2:' + str(m))
 
 
-Test().connect()
+if __name__ == '__main__':
+    p1 = Process(target=task1, name='任务1')
+    p1.start()
+    p2 = Process(target=task2, name='任务2')
+    p2.start()
