@@ -20,3 +20,5 @@ if __name__ == '__main__':
     main()
 
 print("okok %d岁" % (17))
+
+print("我叫{}今年{}岁".format("zs",17))

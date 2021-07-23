@@ -25,7 +25,6 @@ def house(*m, **n):
 
 house(3, clazz=5)
 
-
 # def decorate1(func):
 #     def wrapper(*args, **kwargs):
 #         print('1开始')

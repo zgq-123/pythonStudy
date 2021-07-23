@@ -1,4 +1,7 @@
 '''
+●可变数据类型：列表list和字典dict。
+●不可变数据类型：整型int、浮点型float、字符串型string和元组tuple。
+
 a、全局变量：在模块内、在所有函数外面、在class外面，这就是全局变量。
 
 b、局部变量：在函数内、在class的方法内（未加self修饰的），这就是局部变量。
@@ -17,7 +20,7 @@ def update_a():
 
 
 update_a()
-print(a)
+print(a)  # 3
 
 b = ['a', 'b', 'c']
 
@@ -27,4 +30,4 @@ def add_b():
 
 
 add_b()
-print(b)
+print(b)  # ['a', 'b', 'c','d']
