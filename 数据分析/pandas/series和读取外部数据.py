@@ -1,3 +1,8 @@
+'''
+Series
+由一组数据以及一组与之对应的数据标签（即索引）组成
+可以通过pandas.Series来创建Series，每个Series可以看成是DstaFrame的一个列
+'''
 import string
 
 import pandas as pd

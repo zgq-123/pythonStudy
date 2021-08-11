@@ -1,0 +1,12 @@
+{
+  "code": 200,
+  "apiRecordId": "19092102",
+  "message": "成功",
+  "content": {
+    "EG_zhibiao5": "1",
+    "EG_zhibiao6": "正常",
+    "EG_zhibiao4": "0",
+    "EG_zhibiao9": "0"
+  },
+  "status": 200
+}

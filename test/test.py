@@ -1,0 +1,61 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# s = pd.Series([1, 2, 3], index=['a', 'b', 'c'])
+# print(s)
+# data = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=['a', 'b', 'c'])
+# print(data)
+# data = pd.read_excel(r'./天气/上海历史天气.xlsx')
+# print(data.head())
+# x = np.linspace(0, 10, 1000)  # 等差数列
+# print(x)
+# y = np.sin(x)
+# print(y)
+# plt.plot(x, y, label='y=sinx', color='red', linewidth=2)
+# plt.xlabel('Times')
+# plt.ylabel('Vol')
+# plt.title('this is line')
+# plt.legend(loc='center')
+# plt.show()
+
+# arr1 = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+# print(arr1)
+# arr2 = np.arange(0, 10, 0.5)
+# print(arr2)
+
+# arr3 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+# print(arr3[1, 1])
+# arr4 = ((1, 2, 3), (4, 5, 6))
+# arr5 = np.array(arr4)
+# print(type(arr5))
+# print(arr5)
+# arr6 = np.arange(12).reshape(3, 4)
+# arr7 = np.arange(12, 20).reshape(2, 4)
+# print(np.vstack((arr6, arr7)))
+# arr9 = np.arange(4).reshape(2, 2)
+# print(np.tile(arr9, (2, 3)))
+# arr10 = np.array([[0, 0, 0], [1, 1, 1], [2, 2, 2], [3, 3, 3]])
+# arr11 = np.array([1, 2, 3])
+# print(arr10 + arr11)
+# s = np.array([1, 4, 3, 6, 5, 8, 7, 9])
+# print(type(np.sort(s)))
+# print(sorted(s))
+
+# data = np.genfromtxt(r'./a.txt', delimiter=',',)
+# print(data)
+# print(np.char.upper('abcdef'))
+# print(np.char.add('mmm', 'abcdef'))
+# w = 'aba'
+# n = np.char.count(w, 'a')
+# print(n)
+# x = np.random.random((3, 4))
+# x = np.random.randint(0, 100, size=(2, 2))
+# print(x)
+
+# data = np.genfromtxt(r'./a.txt', delimiter=',')
+# print(data.mean())
+# a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+# b = np.array([[1], [2], [3]])
+# print(np.dot(a, b))
+
