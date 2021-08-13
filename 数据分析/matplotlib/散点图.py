@@ -21,7 +21,7 @@ plt.rcParams['axes.unicode_minus'] = False
 # x刻度
 _x = list(x_3) + list(x_10)
 _xticks_labels = ["3月{}日".format(i) for i in x_3]
-_xticks_labels += ["10月{}日".format(i) for i in x_10]
+_xticks_labels += ["10月{}日".format(i) for i in range(1, 32)]
 plt.xticks(_x, _xticks_labels, rotation=60)
 # y刻度
 _y = list(y_3) + list(y_10)
