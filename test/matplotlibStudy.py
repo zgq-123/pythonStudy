@@ -87,7 +87,7 @@ y_10 = [26, 26, 28, 19, 21, 17, 16, 19, 18, 20, 20, 19, 22, 23, 17, 20, 21, 20, 
 x_3 = range(1, 32)
 x_10 = range(51, 82)
 # # 设置图片大小
-# plt.figure(figsize=(20, 8), dpi=80)
+plt.figure(figsize=(20, 8), dpi=80)
 # 设置可显示中文
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 显示中文标签
 plt.rcParams['axes.unicode_minus'] = False
