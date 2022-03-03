@@ -1,3 +1,20 @@
+'''
+注意点：参数arg、*args、**kwargs三个参数的位置必须是一定的。必须是(arg,*args,**kwargs)这个顺序，否则程序会报错。
+
+def function(arg,*args,**kwargs):
+    print(arg,args,kwargs)
+
+function(6,7,8,9,a=1, b=2, c=3)
+'''
+
+
+def function(arg, *args, **kwargs):
+    print(arg, args, kwargs)
+
+
+function(6, 7, 8, 9, a=1, b=2, c=3)
+
+
 def search():
     print('我是函数')
     return 'a'

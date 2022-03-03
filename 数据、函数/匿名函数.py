@@ -13,7 +13,7 @@
 3.与一些Python的内置函数配合使用，提高代码的可读性
 '''
 s = lambda a, b: a + b
-# print(s(1, 2))
+print(s(1, 2))
 
 list1 = [{'a': 10, 'b': 20}, {'a': 11, 'b': 19}, {'a': 12, 'b': 18}]
 print(max(list1, key=lambda x: x['a']))  # 传入命名参数key，其为一个函数，用来指定取最大值的方法

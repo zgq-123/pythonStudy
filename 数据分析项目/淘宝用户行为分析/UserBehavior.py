@@ -1,6 +1,8 @@
 import pandas as pd
+from pandas._libs.reshape import explode
 from sqlalchemy import create_engine
 import datetime
+from matplotlib import pyplot as plt
 
 # 1.数据读取与展示
 # 读取数据库
@@ -14,8 +16,8 @@ import datetime
 columns = ["userid", 'itemid', 'categoryid', 'type', 'timestamp']
 # 数据量过大，这里只选取前1000w行
 data = pd.read_csv(r'D:\UserBehavior.csv\UserBehavior.csv', engine='python', encoding='utf-8', names=columns,
-                   chunksize=100)
-dataframe = data.get_chunk(100)
+                   chunksize=10000000)
+dataframe = data.get_chunk(10000000)
 # 查看数据的基本信息
 # dataframe.info()
 # 查看缺失值
@@ -40,4 +42,44 @@ dataframe['hour'] = dataframe.time.dt.hour
 dataframe.drop('timestamp', inplace=True,
                axis=1)  # axis  默认为 0，指删除行，因此删除 columns 时要指定 axis=1;inplace=False，默认该删除操作不改变原数据，而是返回一个执行删除操作后的 新 dataframe；
 # inplace=True,则会直接在原数据上进行删除操作，删除后无法返回。
-print(dataframe.loc[[0]])
+# print(dataframe.info())
+
+# 数据分析
+# 用户行为分析
+total_unique_users = dataframe.userid.nunique()  # 独立访问客户数uv
+total_unique_itemid = dataframe.itemid.nunique()  # 有操作的商品
+total_unique_categoryid = dataframe.categoryid.nunique()  # 有错做的商品类目
+user_bought_count = dataframe[dataframe['type'] == 'buy'].userid.nunique()  # 付费用户数
+total_nobought_count = total_unique_users - user_bought_count  # 非付费用户数
+# print(f"          UV：{total_unique_users}")
+# print(f"      商品数：{total_unique_itemid}")
+# print(f"      类目数：{total_unique_categoryid}")
+# print(f"  付费用户数：{user_bought_count}")
+# print(f" 非付费用户数：{total_nobought_count}")
+# print(f"付费用户占比：{user_bought_count / total_unique_users * 100:.2f}%")
+
+# 绘制不同行为类型饼状图
+type_series = dataframe.type.value_counts()  # value_counts是对某列作处理——“获取该列不同值出现的频数”
+plt.figure(figsize=(20, 8), dpi=80)
+plt.pie(x=type_series, labels=type_series.index, autopct='%.2f%%')
+# plt.show()
+
+# 取消科学计数法，保留两位小数
+pd.set_option("float_format", lambda x: "%.2f" % x)
+# 9日内各个行为的操作总数，每日平均操作数，每日平均操作用户数记录
+type_df = pd.DataFrame([type_series, type_series / 9, type_series / total_unique_users],
+                       index=['total', 'avg_day', 'avg_user'])
+# 付费用户行为记录
+type_df.loc['paying_user'] = dataframe[
+    dataframe['userid'].isin(dataframe[dataframe['type'] == 'buy']['userid'])].type.value_counts()
+# print(type_df)
+
+# 跳失率和复购率
+'''
+跳失率=只有点击行为的用户/总用户数
+    其实真正的跳失率应该是只浏览一个页面就离开的访问次数 / 该页面的全部访问次数；这边只是为了突出这些有待发展的客户
+复购率=购买两次及以上用户数/总购买用户数
+    复购率可以分为按客户计算和按交易计算，这里我采用的是按客户计算。一定要确定统计周期，这个数据的统计周起就是9天
+'''
+groupby_userid = dataframe.groupby(by='userid')  # 488813
+print(groupby_userid.head().count())

@@ -37,4 +37,8 @@
 # age = 13
 # print('帅气的{0}今年{1}岁'.format(name, age))
 
+name='lisi'
+age=15
+print('{}{}'.format(name,age))
+
 

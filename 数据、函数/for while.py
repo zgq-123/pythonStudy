@@ -1,4 +1,4 @@
-import random01
+import random
 
 # print('hello python')
 # cai = random.randint(1, 10)

@@ -3,6 +3,8 @@
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
     <file url="file://$PROJECT_DIR$/test/PandasStudy.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/matplotlibStudy.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/test_json文件解析.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/test_数据、函数.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/数据分析/pandas/Pandas获取数据与保存.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/数据分析/数据处理/数据库读取与保存.py" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/数据分析/数据处理/数据整合.py" charset="UTF-8" />
