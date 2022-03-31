@@ -1,6 +1,7 @@
 import re
 
 msg = '佟丽娅娜扎热巴戴斯佟丽娅'
+# compile 函数根据一个模式字符串和可选的标志参数生成一个正则表达式对象。该对象拥有一系列方法用于正则表达式匹配和替换。
 pattern = re.compile('佟丽娅')
 print(type(pattern))
 print(pattern)
